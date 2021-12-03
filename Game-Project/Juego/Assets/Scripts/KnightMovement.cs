@@ -8,6 +8,7 @@ public class KnightMovement : MonoBehaviour
     public float JumpForce;
 
     private Rigidbody2D Rigidbody2D;
+    private Animator Animator;
     private float Horizontal;
     private bool Ground;
 
@@ -15,6 +16,7 @@ public class KnightMovement : MonoBehaviour
     {
         // Obtener componente RigidBody
         Rigidbody2D = GetComponent<Rigidbody2D>();
+        Animator = GetComponent<Animator>();
     }
 
     void Update()
@@ -22,16 +24,26 @@ public class KnightMovement : MonoBehaviour
         // Valores en funcion de lo que el usuario pulsa (-1 , 1)
         Horizontal = Input.GetAxisRaw("Horizontal");
 
+        if (Horizontal < 0.0f)
+        {
+            transform.localScale = new Vector3(-0.1499787f, 0.1499787f, 0.1499787f);
+        } else if (Horizontal > 0.0f)
+        {
+            transform.localScale = new Vector3(0.1499787f, 0.1499787f, 0.1499787f);
+        }
 
-       Debug.DrawRay(transform.position, Vector3.down * 1f, Color.red);
+        Animator.SetBool("running", Horizontal != 0.0f);
 
-        if (Physics2D.Raycast(transform.position, Vector3.down, 0.1f))
+        Debug.DrawRay(transform.position, Vector3.down * 0.5f, Color.red);
+
+        if (Physics2D.Raycast(transform.position, Vector3.down, 0.5f))
         {
             Ground = true;
         } else
         {
-            Ground= false;
+            Ground = false;
         }
+    
 
         if (Input.GetKeyDown(KeyCode.W) && Ground)
         {
