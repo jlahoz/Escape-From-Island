@@ -32,6 +32,8 @@ public class Enemy : MonoBehaviour
 
         animator.SetBool("isDead", true);
 
-        this.enabled = false;
+        Destroy(gameObject, 1);
+
+
     }
 }

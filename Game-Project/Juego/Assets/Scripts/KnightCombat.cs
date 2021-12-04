@@ -8,10 +8,12 @@ public class KnightCombat : MonoBehaviour
     public Animator animator;
 
     public Transform attackPoint;
-    public float attackRange = 0.5f;
     public LayerMask enemyLayers;
 
     public int attackDamage = 40;
+    public float attackRange = 0.5f;
+    public float attackRate = 2f;
+    float nextAttackTime = 0f;
 
     // Start is called before the first frame update
     void Start()
@@ -22,10 +24,16 @@ public class KnightCombat : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
+        if(Time.time >= nextAttackTime)
         {
-            Attack();
+            if (Input.GetKeyDown(KeyCode.Space))
+            {
+                Attack();
+                nextAttackTime = Time.time + 1f / attackRate;
+            }
         }
+
+
     }
 
     void Attack()
