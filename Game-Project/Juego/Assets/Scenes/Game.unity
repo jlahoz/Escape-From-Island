@@ -1179,8 +1179,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Knight: {fileID: 1994855294}
-  velocity: 5
+  velocity: 1
   distanciaVision: 2.5
+  distanciaAtaque: 1
   animator: {fileID: 1327055277}
   player: {fileID: 1994855296}
   rb2D: {fileID: 1327055276}
@@ -1197,8 +1198,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe8a6b76a730b93418253b83eddb3225, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  animator: {fileID: 0}
+  animator: {fileID: 1327055277}
   maxHealth: 100
+  currentHealth: 0
 --- !u!1 &1638422407
 GameObject:
   m_ObjectHideFlags: 0

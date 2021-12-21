@@ -9,6 +9,7 @@ public class JackScript : MonoBehaviour
     public float velocity;
     private float distanciaJugador;
     public float distanciaVision;
+    public float distanciaAtaque;
 
     public Animator animator;
     public Transform player;
@@ -36,6 +37,10 @@ public class JackScript : MonoBehaviour
         if (distanciaJugador < distanciaVision)
         {
             Move();
+            if (distanciaJugador < distanciaAtaque)
+            {
+                Attack();
+            }
         } else
         {
             animator.SetBool("running", false);
@@ -52,8 +57,14 @@ public class JackScript : MonoBehaviour
         rb2D.MovePosition(newPosition);
     }
 
+    private void Attack()
+    {
+        Debug.Log("Ataque");
+    }
+
     private void OnDrawGizmos()
     {
         Gizmos.DrawWireSphere(transform.position, distanciaVision);
+        Gizmos.DrawWireSphere(transform.position, distanciaAtaque);
     }
 }
