@@ -1124,7 +1124,7 @@ CapsuleCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: -0.3585503, y: -0.41831002}
-  m_Size: {x: 3.997238, y: 6.076272}
+  m_Size: {x: 4, y: 6}
   m_Direction: 0
 --- !u!50 &1327055276
 Rigidbody2D:
@@ -1179,9 +1179,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Knight: {fileID: 1994855294}
-  velocity: 1
+  velocity: 7
   distanciaVision: 2.5
   distanciaAtaque: 1
+  cc2D: {fileID: 1327055275}
   animator: {fileID: 1327055277}
   player: {fileID: 1994855296}
   rb2D: {fileID: 1327055276}
@@ -2845,7 +2846,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Speed: 1.5
-  JumpForce: 200
+  JumpForce: 250
 --- !u!95 &1994855300
 Animator:
   serializedVersion: 3

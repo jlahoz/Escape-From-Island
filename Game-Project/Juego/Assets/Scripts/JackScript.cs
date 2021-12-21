@@ -10,7 +10,9 @@ public class JackScript : MonoBehaviour
     private float distanciaJugador;
     public float distanciaVision;
     public float distanciaAtaque;
+    float nextAttackTime = 0f;
 
+    public CapsuleCollider2D cc2D;
     public Animator animator;
     public Transform player;
     public Rigidbody2D rb2D;
@@ -18,7 +20,6 @@ public class JackScript : MonoBehaviour
 
     void start()
     {
-
     }
 
     private void Update()
@@ -37,9 +38,10 @@ public class JackScript : MonoBehaviour
         if (distanciaJugador < distanciaVision)
         {
             Move();
-            if (distanciaJugador < distanciaAtaque)
+            if (distanciaJugador < distanciaAtaque && Time.time >= nextAttackTime)
             {
                 Attack();
+                nextAttackTime = Time.time + 3f;
             }
         } else
         {
@@ -51,8 +53,11 @@ public class JackScript : MonoBehaviour
 
     private void Move()
     {
+        velocity = 6f;
+        cc2D.size = new Vector2(4f, 6f);
         animator.SetBool("running", true);
-        Vector2 objetivo = new Vector2(player.position.x, player.position.y);
+        animator.SetBool("isAttacking", false);
+        Vector2 objetivo = new Vector2(player.position.x, rb2D.position.y);
         Vector2 newPosition = Vector2.MoveTowards(rb2D.position, objetivo, velocity * Time.deltaTime);
         rb2D.MovePosition(newPosition);
     }
@@ -60,6 +65,9 @@ public class JackScript : MonoBehaviour
     private void Attack()
     {
         Debug.Log("Ataque");
+        velocity = velocity + 2f;
+        animator.SetBool("isAttacking", true);
+        cc2D.size = new Vector2(4f,4.5f);
     }
 
     private void OnDrawGizmos()
