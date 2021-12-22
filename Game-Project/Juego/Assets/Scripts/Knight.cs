@@ -16,16 +16,7 @@ public class Knight : MonoBehaviour
         healthBar.SetMaxHealth(maxHealth);
     }
 
-    void Update()
-    {
-        // Codigo para pruebas falta terminar.
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            TakeDamage(20);
-        }
-    }
-
-    void TakeDamage(int damage)
+    public void TakeDamage(int damage)
     {
         currentHealth -= damage;
 

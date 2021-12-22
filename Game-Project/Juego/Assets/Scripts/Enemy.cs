@@ -4,20 +4,29 @@ using UnityEngine;
 
 public class Enemy: MonoBehaviour
 {
+    public GameObject enemy;
 
     public Animator animator;
 
     public int maxHealth = 100;
     public int currentHealth;
 
-    // Start is called before the first frame update
+
     void Start()
     {
         currentHealth = maxHealth;
     }
 
+    void update()
+    {
+
+    }
+
     public void TakeDamage(int damage)
     {
+        // Resetear el tiempo de aturdir a Jack cada vez que recibe daño.
+
+        JackScript.dazedTime = JackScript.startDazedTime;
         currentHealth -= damage;
 
         if (currentHealth <= 0)

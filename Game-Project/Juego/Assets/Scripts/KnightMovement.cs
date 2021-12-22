@@ -4,13 +4,16 @@ using UnityEngine;
 
 public class KnightMovement : MonoBehaviour
 {
+    // Movimiento
     public float Speed;
     public float JumpForce;
+    private bool Ground;
 
+    // Objetos
     private Rigidbody2D Rigidbody2D;
     private Animator Animator;
     private float Horizontal;
-    private bool Ground;
+
 
     void Start()
     {
@@ -24,6 +27,7 @@ public class KnightMovement : MonoBehaviour
         // Valores en funcion de lo que el usuario pulsa (-1 , 1)
         Horizontal = Input.GetAxisRaw("Horizontal");
 
+        // Rotar el Knight en funcion de la direccion.
         if (Horizontal < 0.0f)
         {
             transform.localScale = new Vector3(-0.1499787f, 0.1499787f, 0.1499787f);
@@ -34,8 +38,9 @@ public class KnightMovement : MonoBehaviour
 
         Animator.SetBool("running", Horizontal != 0.0f);
 
-        Debug.DrawRay(transform.position, Vector3.down * 0.5f, Color.red);
+        Debug.DrawRay(transform.position, Vector3.down * 0.5f, Color.red); // Rayo para detectar si toca suelo.
 
+        // Sistema deteccion suelo para saltar.
         if (Physics2D.Raycast(transform.position, Vector3.down, 0.5f))
         {
             Ground = true;
@@ -44,7 +49,7 @@ public class KnightMovement : MonoBehaviour
             Ground = false;
         }
     
-
+        
         if (Input.GetKeyDown(KeyCode.W) && Ground)
         {
             Jump();

@@ -5,25 +5,20 @@ using UnityEngine;
 public class KnightCombat : MonoBehaviour
 {
 
-    public Animator animator;
-
-    public Transform attackPoint;
-    public LayerMask enemyLayers;
-
+    // Ataque
     public int attackDamage = 40;
     public float attackRange = 0.5f;
     public float attackRate = 2f;
     float nextAttackTime = 0f;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    // Objetos
+    public Animator animator;
+    public Transform attackPoint;
+    public LayerMask enemyLayers;
 
-    // Update is called once per frame
     void Update()
     {
+        // Sistema de ataque
         if(Time.time >= nextAttackTime)
         {
             if (Input.GetKeyDown(KeyCode.Space))
@@ -37,9 +32,10 @@ public class KnightCombat : MonoBehaviour
     void Attack()
     {
         animator.SetTrigger("Attack");
-
+        // Deteccion de enemigos dentro del radio de ataque.
         Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, enemyLayers);
 
+        // Daño a esos enemigos.
         foreach(Collider2D enemy in hitEnemies)
         {
             enemy.GetComponent<Enemy>().TakeDamage(attackDamage);
