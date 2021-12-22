@@ -10,7 +10,6 @@ public class JackScript : MonoBehaviour
     private float distanciaJugador;
     public float distanciaVision;
     public float distanciaAtaque;
-    float nextAttackTime = 0f;
 
     public CapsuleCollider2D cc2D;
     public Animator animator;
@@ -24,7 +23,11 @@ public class JackScript : MonoBehaviour
 
     private void Update()
     {
+
+        // Seguimiento del Personaje principal.
+
         Vector3 direction = Knight.transform.position - transform.position;
+        
         if(direction.x >= 0.0f)
         {
             transform.localScale = new Vector3(0.12f, 0.12f, 0.12f);
@@ -33,41 +36,42 @@ public class JackScript : MonoBehaviour
             transform.localScale = new Vector3(-0.12f, 0.12f, 0.12f);
         }
 
+        // Calculo distancia al jugador.
         distanciaJugador = Vector2.Distance(player.position, rb2D.position);
 
+
+        //Control de movimiento.
         if (distanciaJugador < distanciaVision)
         {
             Move();
-            if (distanciaJugador < distanciaAtaque && Time.time >= nextAttackTime)
+            // Control de ataque.
+            if (distanciaJugador < distanciaAtaque)
             {
+                cc2D.size = new Vector2(4f, 4.5f);
                 Attack();
-                nextAttackTime = Time.time + 3f;
             }
         } else
         {
             animator.SetBool("running", false);
         }
-
-
     }
 
     private void Move()
     {
-        velocity = 6f;
+        Debug.Log("mover");
         cc2D.size = new Vector2(4f, 6f);
         animator.SetBool("running", true);
         animator.SetBool("isAttacking", false);
         Vector2 objetivo = new Vector2(player.position.x, rb2D.position.y);
         Vector2 newPosition = Vector2.MoveTowards(rb2D.position, objetivo, velocity * Time.deltaTime);
         rb2D.MovePosition(newPosition);
+
     }
 
     private void Attack()
     {
         Debug.Log("Ataque");
-        velocity = velocity + 2f;
         animator.SetBool("isAttacking", true);
-        cc2D.size = new Vector2(4f,4.5f);
     }
 
     private void OnDrawGizmos()

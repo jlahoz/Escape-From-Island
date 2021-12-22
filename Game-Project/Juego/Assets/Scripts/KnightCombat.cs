@@ -32,8 +32,6 @@ public class KnightCombat : MonoBehaviour
                 nextAttackTime = Time.time + 1f / attackRate;
             }
         }
-
-
     }
 
     void Attack()
@@ -54,7 +52,6 @@ public class KnightCombat : MonoBehaviour
         {
             return;
         }
-      
         Gizmos.DrawWireSphere(attackPoint.position, attackRange);
     }
 }
