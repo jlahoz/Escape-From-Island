@@ -25,6 +25,7 @@ public class JackScript : MonoBehaviour
 
     // Aturdir
     public static float dazedTime;
+    public static float isAlive = 4;
     public static float startDazedTime = 3;
     private bool aturdido = false;
 
@@ -60,6 +61,7 @@ public class JackScript : MonoBehaviour
         }
         else
         {
+            Debug.Log("Aturdido");
             velocity = 0f;
             aturdido = true;
             dazedTime -= Time.deltaTime;
