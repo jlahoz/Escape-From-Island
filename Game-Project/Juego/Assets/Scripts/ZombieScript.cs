@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -9,13 +9,16 @@ public class ZombieScript: MonoBehaviour
     private float distanciaJugador;
     public float distanciaVision;
     public float distanciaAtaque;
-
+    
     // Ataque
     public int attackDamage = 40;
     public float attackRange = 0.5f;
     public Transform attackPoint;
     public LayerMask KnightLayer;
+    public float nextAttack;
+    public float nextAttackAnimation;
     float nextAttackTime = 0f;
+    float attackAnimationTime = 0f;
 
     //Objetos 
     public GameObject Knight;
@@ -53,7 +56,7 @@ public class ZombieScript: MonoBehaviour
         if (distanciaJugador < distanciaVision)
         {
             Move();
-            if (distanciaJugador < distanciaAtaque)
+            if (distanciaJugador < distanciaAtaque && Time.time >= nextAttackTime)
             {
                 Attack();
             }
@@ -79,14 +82,20 @@ public class ZombieScript: MonoBehaviour
     {
         Debug.Log("ataque");
         animator.SetBool("isAttacking", true);
-        // Da�o del Knight
+        //Daño del Knight
         Collider2D[] hitKnight = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, KnightLayer);
 
-        foreach (Collider2D knight in hitKnight)
+        if (Time.time >= attackAnimationTime)
         {
-            knight.GetComponent<Knight>().TakeDamage(attackDamage);
+            foreach (Collider2D knight in hitKnight)
+            {
+                knight.GetComponent<Knight>().TakeDamage(attackDamage);
+            }
+            attackAnimationTime = Time.time + nextAttackAnimation;
         }
-        nextAttackTime = Time.time + 1f;
+
+
+        nextAttackTime = Time.time + nextAttack;
         Debug.Log("cerrado");
     }
 
