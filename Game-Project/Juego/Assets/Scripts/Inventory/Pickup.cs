@@ -2,11 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PickUpObject : MonoBehaviour
+public class Pickup : MonoBehaviour
 {
-    public Inventory inventory;
+    private Inventory inventory;
     public GameObject itemButton;
 
+    private void start()
+    {
+        inventory = GameObject.FindGameObjectWithTag("Player").GetComponent<Inventory>();
+    }
 
     void OnTriggerEnter2D(Collider2D other)
     {

@@ -4,7 +4,7 @@ TextureImporter:
   internalIDToNameTable:
   - first:
       213: 9139330975122868335
-    second: descarga_0
+    second: SlotBG
   - first:
       213: -8642362588173432070
     second: descarga_1
@@ -16,7 +16,7 @@ TextureImporter:
     second: descarga_3
   - first:
       213: -6135742477304285895
-    second: descarga_4
+    second: HealthPotion
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -118,15 +118,15 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: descarga_0
+      name: SlotBG
       rect:
         serializedVersion: 2
-        x: 74
-        y: 255
+        x: 65
+        y: 252
         width: 464
         height: 433
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -139,70 +139,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: descarga_1
-      rect:
-        serializedVersion: 2
-        x: 651
-        y: 433
-        width: 162
-        height: 257
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: afa0cc7e309201880800000000000000
-      internalID: -8642362588173432070
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: descarga_2
-      rect:
-        serializedVersion: 2
-        x: 866
-        y: 407
-        width: 292
-        height: 309
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 48c4dee772e78ffb0800000000000000
-      internalID: -4613799110142767996
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: descarga_3
-      rect:
-        serializedVersion: 2
-        x: 633
-        y: 130
-        width: 238
-        height: 236
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 4510f1b974763d7b0800000000000000
-      internalID: -5200699587439951532
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: descarga_4
+      name: HealthPotion
       rect:
         serializedVersion: 2
         x: 928
@@ -210,7 +147,7 @@ TextureImporter:
         width: 213
         height: 303
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []

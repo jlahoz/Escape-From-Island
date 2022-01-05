@@ -9,6 +9,9 @@ public class KnightMovement : MonoBehaviour
     public float JumpForce;
     private bool Ground;
 
+    // Transform utilizado para la posicion al dropear elementos del inventario.
+    public static Transform player;
+
     // Objetos
     private Rigidbody2D Rigidbody2D;
     private Animator Animator;
@@ -20,6 +23,8 @@ public class KnightMovement : MonoBehaviour
         // Obtener componente RigidBody
         Rigidbody2D = GetComponent<Rigidbody2D>();
         Animator = GetComponent<Animator>();
+        
+        player = GetComponent<Transform>();
     }
 
     void Update()

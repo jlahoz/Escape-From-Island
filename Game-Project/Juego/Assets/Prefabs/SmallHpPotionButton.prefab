@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 2624493224228852541}
   - component: {fileID: 2624493224228852543}
   - component: {fileID: 2624493224228852542}
+  - component: {fileID: -5782304971496120678}
   m_Layer: 5
   m_Name: SmallHpPotionButton
   m_TagString: Untagged
@@ -75,3 +76,16 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &-5782304971496120678
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2624493224228852540}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ff8b849e1f017f45958ed294f3080dc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  item: {fileID: 6489647619627098789, guid: 4e34cf9b289008945b51004100204dce, type: 3}
