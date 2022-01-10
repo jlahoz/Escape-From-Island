@@ -10,10 +10,11 @@ public class PauseMenu : MonoBehaviour
 
     public GameObject pauseMenuUI;
 
-    // Update is called once per frame
+
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape))
+        // Control del pause menu siempre que no este ningun cartel abierto
+        if (Input.GetKeyDown(KeyCode.Escape) && !SignScript.cartelAbierto)
         {
             if (isPaused)
             {
@@ -43,6 +44,7 @@ public class PauseMenu : MonoBehaviour
     public void MainMenu()
     {
         Time.timeScale = 1f;
+        isPaused = true;
         SceneManager.LoadScene("MainMenu");
     }
 

@@ -7,7 +7,7 @@ public class SignScript : MonoBehaviour
 
     private float distanciaJugador;
     public float distanciaInteractuar;
-    private bool cartelAbierto = false;
+    public static bool cartelAbierto = false;
 
     public GameObject TextoUI;
     public GameObject Sign;
