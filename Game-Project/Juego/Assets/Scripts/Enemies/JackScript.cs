@@ -9,7 +9,7 @@ public class JackScript : MonoBehaviour
     private float distanciaJugador;
     public float distanciaVision;
     public float distanciaAtaque;
-
+    private bool Ground;
     // Ataque
     public int attackDamage = 40;
     public float attackRange = 0.5f;
@@ -67,8 +67,18 @@ public class JackScript : MonoBehaviour
             dazedTime -= Time.deltaTime;
         }
 
+        //Evitar bug Volar.
+        if (Physics2D.Raycast(transform.position, Vector3.down, 0.5f))
+        {
+            Ground = true;
+        }
+        else
+        {
+            Ground = false;
+        }
+
         //Control de movimiento.
-        if (distanciaJugador < distanciaVision)
+        if (distanciaJugador < distanciaVision && Ground)
         {
             Move();
 

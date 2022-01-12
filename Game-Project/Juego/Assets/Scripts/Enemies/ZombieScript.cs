@@ -9,7 +9,7 @@ public class ZombieScript: MonoBehaviour
     private float distanciaJugador;
     public float distanciaVision;
     public float distanciaAtaque;
-    
+    private bool Ground;
     // Ataque
     public int attackDamage = 40;
     public float attackRange = 0.5f;
@@ -51,9 +51,17 @@ public class ZombieScript: MonoBehaviour
         // Calculo distancia del enemigo al jugador.
         distanciaJugador = Vector2.Distance(player.position, rb2D.position);
 
-        //Control de movimiento.
-        
-        if (distanciaJugador < distanciaVision)
+        //Evitar bug Volar.
+        if (Physics2D.Raycast(transform.position, Vector3.down, 0.5f))
+        {
+            Ground = true;
+        }
+        else
+        {
+            Ground = false;
+        }
+
+        if (distanciaJugador < distanciaVision && Ground)
         {
             Move();
             if (distanciaJugador < distanciaAtaque && Time.time >= nextAttackTime)
