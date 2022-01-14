@@ -10,6 +10,7 @@ public class Enemy : MonoBehaviour
 
     public int maxHealth = 100;
     public int currentHealth;
+    public int StunEnemiesAlive = 4;
 
 
     void Start()
@@ -26,7 +27,8 @@ public class Enemy : MonoBehaviour
     {
         // Resetear el tiempo de aturdir a Jack cada vez que recibe daño.
 
-        JackScript.dazedTime = JackScript.startDazedTime * JackScript.isAlive;
+        JackScript.dazedTime = JackScript.startDazedTime * StunEnemiesAlive;
+        SantaScript.dazedTime = SantaScript.startDazedTime * StunEnemiesAlive;
         currentHealth -= damage;
 
         Debug.Log("Daño");
@@ -34,7 +36,7 @@ public class Enemy : MonoBehaviour
         if (currentHealth <= 0)
         {
             Die();
-            JackScript.isAlive -= 1;
+            StunEnemiesAlive += 1;
         }
     }
 

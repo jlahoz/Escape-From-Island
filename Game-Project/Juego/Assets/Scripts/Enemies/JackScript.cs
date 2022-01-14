@@ -11,7 +11,7 @@ public class JackScript : MonoBehaviour
     public float distanciaAtaque;
     private bool Ground;
     // Ataque
-    public int attackDamage = 40;
+    public int attackDamage = 2;
     public float attackRange = 0.5f;
     public Transform attackPoint;
     public LayerMask KnightLayer;
@@ -25,7 +25,6 @@ public class JackScript : MonoBehaviour
 
     // Aturdir
     public static float dazedTime;
-    public static float isAlive = 4;
     public static float startDazedTime = 3;
     private bool aturdido = false;
 
