@@ -41,7 +41,7 @@ public class SantaScript: MonoBehaviour
         // Seguimiento del Personaje principal.
         Vector3 direction = Knight.transform.position - transform.position;
 
-        // Rotar Jack en funcion de Knight
+        // Rotar Santa en funcion de Knight
         if (direction.x >= 0.0f)
         {
             transform.localScale = new Vector3(0.12f, 0.12f, 0.12f);

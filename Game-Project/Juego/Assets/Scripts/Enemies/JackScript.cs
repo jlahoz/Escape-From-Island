@@ -15,7 +15,7 @@ public class JackScript : MonoBehaviour
     public float attackRange = 0.5f;
     public Transform attackPoint;
     public LayerMask KnightLayer;
-
+     
     //Objetos 
     public GameObject Knight;
     public CapsuleCollider2D cc2D;

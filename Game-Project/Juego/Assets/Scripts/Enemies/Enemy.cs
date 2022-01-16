@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
-    public GameObject enemy;
-
     public Animator animator;
 
     public int maxHealth = 100;
@@ -20,18 +18,20 @@ public class Enemy : MonoBehaviour
 
     void update()
     {
-
+       
     }
 
     public void TakeDamage(int damage)
     {
-        // Resetear el tiempo de aturdir a Jack cada vez que recibe daño.
+        // Resetear el tiempo de aturdir a Enemigos cada vez que recibe daño.
 
         JackScript.dazedTime = JackScript.startDazedTime * StunEnemiesAlive;
         SantaScript.dazedTime = SantaScript.startDazedTime * StunEnemiesAlive;
+        CatnDogScript.dazedTime = CatnDogScript.startDazedTime * StunEnemiesAlive;
+
         currentHealth -= damage;
 
-        Debug.Log("Daño");
+        Debug.Log("Daño");  
 
         if (currentHealth <= 0)
         {
