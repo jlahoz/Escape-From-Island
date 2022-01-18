@@ -11,6 +11,7 @@ public class Knight : MonoBehaviour
 
     public HealthBar healthBar;
     public GameObject DeathMenuUI;
+    public Animator animator;
 
     void Start()
     {
@@ -28,6 +29,7 @@ public class Knight : MonoBehaviour
 
     public void TakeDamage(int damage)
     {
+        Debug.Log("hurt");
         currentHealth -= damage;
         healthBar.SetHealth(currentHealth);
 
