@@ -21,6 +21,8 @@ public class Enemy : MonoBehaviour
        
     }
 
+    // Take Damage de los enemigos
+
     public void TakeDamage(int damage)
     {
         // Resetear el tiempo de aturdir a Enemigos cada vez que recibe daño.
