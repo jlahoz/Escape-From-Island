@@ -118,7 +118,8 @@ public class RedHatScript : MonoBehaviour
 
     private void Attack()
     {
-        cc2D.size = new Vector2(4f, 4.5f);  // Cambiar el Capsule Collider al cambiar animacion para que no flote.
+        cc2D.size = new Vector2(3.500513f, 3.822623f);   // Cambiar el Capsule Collider al cambiar animacion para que no flote.
+        cc2D.offset = new Vector2(0.3194737f, -0.3315087f);
         velocity = 3f;
         animator.SetBool("isAttacking", true);
 

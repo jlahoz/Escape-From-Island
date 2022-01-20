@@ -34806,7 +34806,7 @@ MonoBehaviour:
   distanciaVision: 3
   distanciaAtaque: 1.2
   attackDamage: 1
-  attackRange: 0.52
+  attackRange: 0.58
   attackPoint: {fileID: 1393369690}
   KnightLayer:
     serializedVersion: 2
