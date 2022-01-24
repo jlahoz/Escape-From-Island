@@ -10,6 +10,7 @@ public class MiniMapScript : MonoBehaviour
     {
         if (MiniMapCam.orthographicSize > 2f)
         {
+            Debug.Log("AumentarZoom");
             MiniMapCam.orthographicSize -= 0.4f;
         }
 
@@ -18,6 +19,7 @@ public class MiniMapScript : MonoBehaviour
     {
         if(MiniMapCam.orthographicSize < 10f)
         {
+            Debug.Log("ReducirZoom");
             MiniMapCam.orthographicSize += 0.4f;
         }
     }
