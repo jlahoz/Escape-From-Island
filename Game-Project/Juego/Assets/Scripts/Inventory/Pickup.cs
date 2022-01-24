@@ -4,18 +4,21 @@ using UnityEngine;
 
 public class Pickup : MonoBehaviour
 {
-    private Inventory inventory;
+
+
     public GameObject itemButton;
 
     private void start()
     {
-        inventory = GameObject.FindGameObjectWithTag("Player").GetComponent<Inventory>();
+
     }
 
     void OnTriggerEnter2D(Collider2D other)
     {
+
         if (other.CompareTag("Player"))
         {
+            Inventory inventory = other.gameObject.GetComponent<Inventory>();
             for (int i = 0; i < inventory.slots.Length; i++)
             {
                 if (inventory.isFull[i] == false)

@@ -7,7 +7,7 @@ public class Knight : MonoBehaviour
 {
 
     public int maxHealth = 100;
-    public int currentHealth; 
+    public static int currentHealth; 
 
     public HealthBar healthBar;
     public GameObject DeathMenuUI;
