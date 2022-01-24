@@ -21,7 +21,9 @@ public class Knight : MonoBehaviour
 
     void Update()
     {
-        if(currentHealth <= 0)
+        healthBar.SetHealth(currentHealth);
+
+        if (currentHealth <= 0)
         {
             Death();
         }
