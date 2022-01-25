@@ -137,7 +137,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: -2334556600948088517}
         m_TargetAssemblyTypeName: Items, Assembly-CSharp
-        m_MethodName: Potion
+        m_MethodName: healthPotion
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -159,4 +159,3 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aee4329fce5d85646a6ec7c94f46fc62, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  healthBar: {fileID: 0}

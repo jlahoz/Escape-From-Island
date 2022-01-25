@@ -5,7 +5,7 @@ using UnityEngine;
 public class KnightMovement : MonoBehaviour
 {
     // Movimiento
-    public float Speed;
+    public static float Speed = 2;
     public float JumpForce;
     private bool Ground;
 
