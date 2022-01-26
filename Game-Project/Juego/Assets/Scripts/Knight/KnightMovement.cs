@@ -6,7 +6,7 @@ public class KnightMovement : MonoBehaviour
 {
     // Movimiento
     public static float Speed = 2;
-    public float JumpForce;
+    public static float JumpForce = 300;
     private bool Ground;
 
     // Transform utilizado para la posicion al dropear elementos del inventario.

@@ -6,7 +6,7 @@ public class KnightCombat : MonoBehaviour
 {
 
     // Ataque
-    public int attackDamage = 40;
+    public static int attackDamage = 40;
     public float attackRange = 0.5f;
     public float attackRate = 2f;
     float nextAttackTime = 0f;
@@ -18,6 +18,7 @@ public class KnightCombat : MonoBehaviour
 
     void Update()
     {
+
         // Sistema de ataque
         if(Time.time >= nextAttackTime)
         {

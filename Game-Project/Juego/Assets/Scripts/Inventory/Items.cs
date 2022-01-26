@@ -4,10 +4,19 @@ using UnityEngine;
 
 public class Items : MonoBehaviour
 {
-    private Inventory inventory;
+    public int speedPotionTime = 10;
+    public int jumpPotionTime = 20;
+    public int damagePotionTime = 30;
 
-    int i;
-    int speedPotionTime = 2;
+    public static bool usedWood = false;
+    public static bool usedStone = false;
+    public static bool usedRope = false;
+
+    private Inventory inventory;
+    private Transform posicion;
+
+    private GameObject slot;
+    private Slot slotScript;
 
     public void Start()
     {
@@ -17,18 +26,108 @@ public class Items : MonoBehaviour
     {
         Knight.currentHealth += 25;
         Destroy(gameObject);
-        inventory.isFull[i] = false;
+        useSlotItem();
+
     }
 
     public void healthPotion()
     {
         Knight.currentHealth += 50;
         Destroy(gameObject);
-        inventory.isFull[i] = false;
+        useSlotItem();
     }
 
     public void speedPotion()
     {
+        KnightMovement.Speed += 1;
+        useSlotItem();
 
+        posicion = GetComponent<Transform>();
+
+        posicion.localScale = new Vector3(0, 0, 0);
+
+        StartCoroutine(speedPotionTimer());
+
+    }
+
+    IEnumerator speedPotionTimer()
+    {
+        yield return new WaitForSeconds(speedPotionTime);
+        KnightMovement.Speed -= 1;
+        Destroy(gameObject);
+    }
+
+    public void jumpPotion()
+    {
+        KnightMovement.JumpForce += 50;
+        useSlotItem();
+
+        posicion = GetComponent<Transform>();
+        posicion.localScale = new Vector3(0, 0, 0);
+
+        StartCoroutine(jumpPotionTimer());
+    }
+
+    IEnumerator jumpPotionTimer()
+    {
+        yield return new WaitForSeconds(jumpPotionTime);
+        KnightMovement.JumpForce -= 50;
+        Destroy(gameObject);
+    }
+
+    public void damagePotion()
+    {
+        KnightCombat.attackDamage += 20;
+
+        useSlotItem();
+
+        posicion = GetComponent<Transform>();
+        posicion.localScale = new Vector3(0, 0, 0);
+
+        StartCoroutine(damagePotionTimer());
+    }
+    IEnumerator damagePotionTimer()
+    {
+        yield return new WaitForSeconds(damagePotionTime);
+        KnightCombat.attackDamage -= 20;
+        Destroy(gameObject);
+    }
+
+    public void woodItem()
+    {
+        if (BoatScript.canUseItem)
+        {
+            usedWood = true;
+            useSlotItem();
+            Destroy(gameObject);
+        }
+    }
+
+    public void stoneItem()
+    {
+        if (BoatScript.canUseItem)
+        {
+            usedStone = true;
+            useSlotItem();
+            Destroy(gameObject);
+        }
+    }
+
+    public void ropeItem()
+    {
+        if (BoatScript.canUseItem)
+        {
+            usedRope = true;
+            useSlotItem();
+            Destroy(gameObject);
+        }
+    }
+
+    private void useSlotItem()
+    {
+        slot = transform.parent.gameObject;
+        Debug.Log(slot);
+        slotScript = slot.GetComponent<Slot>();
+        inventory.isFull[slotScript.i] = false;
     }
 }

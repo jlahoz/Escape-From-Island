@@ -10,10 +10,15 @@ public class Enemy : MonoBehaviour
     public int currentHealth;
     public int StunEnemiesAlive = 4;
 
+    public GameObject rope;
+    private Transform Knight;
+    private Vector3 posicionItem;
+
 
     void Start()
     {
         currentHealth = maxHealth;
+        Knight = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
     }
 
     void update()
@@ -48,7 +53,13 @@ public class Enemy : MonoBehaviour
 
         animator.SetBool("isDead", true);
 
+        if(gameObject.name == "Boss_Adventure")
+        {
+
+        }
+
         Destroy(gameObject, 1);
+
 
     }
 }
