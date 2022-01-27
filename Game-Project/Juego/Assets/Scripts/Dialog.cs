@@ -7,50 +7,95 @@ public class Dialog : MonoBehaviour
 {
 
     public TextMeshProUGUI text;
-    public string[] line;
-    public int index;
+    public string[] lineBoy;
+    public string[] lineGirl;
+    public int indexBoy;
+    public int indexGirl;
     public float typingSpeed;
 
-    public GameObject continueButton;
+    public GameObject continueButtonBoy;
+    public GameObject continueButtonGirl;
     public GameObject inventoryUI;
 
-    public void boyDialog()
-    {
-        inventoryUI.SetActive(false);
-        StartCoroutine(write());
-    }
 
     private void Update()
     {
-        if(text.text == line[index])
+        if (text.text == lineBoy[indexBoy])
         {
-            continueButton.SetActive(true);
+            continueButtonBoy.SetActive(true);
+        }
+        if (text.text == lineGirl[indexGirl])
+        {
+            continueButtonGirl.SetActive(true);
         }
     }
 
-    IEnumerator write()
+    // Dialogo Girl
+
+    public void girlDialog()
     {
-        foreach(char letra in line[index].ToCharArray())
+        inventoryUI.SetActive(false);
+        StartCoroutine(writeGirl());
+    }
+
+
+    IEnumerator writeGirl()
+    {
+        foreach (char letra in lineGirl[indexGirl].ToCharArray())
         {
             text.text += letra;
             yield return new WaitForSeconds(typingSpeed);
         }
     }
 
-    public void siguienteFrase()
+    public void nextLineGirl()
     {
-        continueButton.SetActive(false);
+        continueButtonGirl.SetActive(false);
 
-        if (index < line.Length - 1)
+        if (indexGirl < lineGirl.Length - 1)
         {
-            index++;
+            indexGirl++;
             text.text = "";
-            StartCoroutine(write());
+            StartCoroutine(writeGirl());
         }
         else
         {
             text.text = "";
-            continueButton.SetActive(false);
+            continueButtonGirl.SetActive(false);
+            inventoryUI.SetActive(true);
+        }
+    }
+
+    // Dialogo Boy
+    public void boyDialog()
+    {
+        inventoryUI.SetActive(false);
+        StartCoroutine(writeBoy());
+    }
+
+    IEnumerator writeBoy()
+    {
+        foreach(char letra in lineBoy[indexBoy].ToCharArray())
+        {
+            text.text += letra;
+            yield return new WaitForSeconds(typingSpeed);
+        }
+    }
+
+    public void nextLineBoy()
+    {
+        continueButtonBoy.SetActive(false);
+
+        if (indexBoy < lineBoy.Length - 1)
+        {
+            indexBoy++;
+            text.text = "";
+            StartCoroutine(writeBoy());
+        }
+        else
+        {
+            text.text = "";
+            continueButtonBoy.SetActive(false);
             inventoryUI.SetActive(true);
         }
     }   

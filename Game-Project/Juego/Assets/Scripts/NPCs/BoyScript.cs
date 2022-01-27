@@ -19,7 +19,7 @@ public class BoyScript : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.E))
             {
-                boyDialog.index = 0;
+                boyDialog.indexBoy = 0;
                 boyDialog.boyDialog();
             }
         }

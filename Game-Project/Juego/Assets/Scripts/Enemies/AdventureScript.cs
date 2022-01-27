@@ -8,13 +8,20 @@ public class AdventureScript: MonoBehaviour
     public static float velocity;
     private float distanciaJugador;
     public float distanciaVision;
-    public float distanciaAtaque;
+    public float distanciaDisparo;
+    public float distanciaArrastre;
+    public float distanciaMelee;
     private bool Ground;
     // Ataque
     public int attackDamage = 2;
     public float attackRange = 0.5f;
     public Transform attackPoint;
     public LayerMask KnightLayer;
+    float attackAnimationTime = 0f;
+    public float nextAttack;
+    public float nextAttackAnimation;
+    float nextAttackTime = 0f;
+
 
     //Objetos 
     public GameObject Knight;
@@ -28,11 +35,6 @@ public class AdventureScript: MonoBehaviour
     public static float startDazedTime = 3;
     private bool aturdido = false;
 
-
-    void start()
-    {
-
-    }
 
     private void Update()
     {
@@ -77,15 +79,27 @@ public class AdventureScript: MonoBehaviour
             Ground = false;
         }
 
-        //Control de movimiento.
+        //Control de movimiento y ataque.
         if (distanciaJugador < distanciaVision && Ground)
         {
             Move();
 
-            // Control de ataque por distancia y control de aturdir.
-            if (distanciaJugador < distanciaAtaque && aturdido == false)
+            if (distanciaJugador <= distanciaMelee)
             {
-                Attack();
+                // Ataque melee
+                Debug.Log("Melee");
+                meleeAttack();
+                
+            } else if (distanciaJugador <= distanciaArrastre)
+            {
+                //Ataque arrastre
+                Debug.Log("Arrastre");
+                slideAttack();
+            } else if (distanciaJugador <= distanciaDisparo)
+            {
+                //Ataque disparando
+                Debug.Log("Disparo");
+                shootAttack();
             }
         }
         else
@@ -96,7 +110,10 @@ public class AdventureScript: MonoBehaviour
 
     private void Move()
     {
-        animator.SetBool("isAttacking", false);
+        animator.SetBool("slideAttack", false);
+        animator.SetBool("meleeAttack", false);
+        animator.SetBool("shootAttack", false);
+
         if (aturdido)
         {
             animator.SetBool("running", false);
@@ -115,12 +132,12 @@ public class AdventureScript: MonoBehaviour
 
     }
     
-    private void Attack()
+    private void slideAttack()
     {
         cc2D.size = new Vector2(3.708249f, 3.978895f);   // Cambiar el CC al cambiar de animacion.
         cc2D.offset = new Vector2(-0.6323901f, -0.5707018f);
         velocity = 3f;
-        animator.SetBool("isAttacking", true);
+        animator.SetBool("slideAttack", true);
 
         // Daño del Knight
         Collider2D[] hitKnight = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, KnightLayer);
@@ -131,12 +148,51 @@ public class AdventureScript: MonoBehaviour
         }
     }
 
+    private void meleeAttack()
+    {
+
+        Collider2D[] hitKnight = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, KnightLayer);
+        animator.SetBool("running" , false);
+        if(Time.time >= nextAttackTime)
+        {
+            animator.SetBool("meleeAttack", true);
+
+            if (Time.time >= attackAnimationTime)
+            {
+                foreach (Collider2D knight in hitKnight)
+                {
+                    knight.GetComponent<Knight>().TakeDamage(attackDamage);
+                }
+                attackAnimationTime = Time.time + nextAttackAnimation;
+            }
+            nextAttackTime = Time.time + nextAttack;
+        }
+    }
+
+    private void shootAttack()
+    {
+        if (Time.time >= nextAttackTime)
+        {
+            animator.SetBool("shootAttack", true);
+            nextAttackTime = Time.time + nextAttack;
+            // Instanciar prefabs de balas
+        }
+   
+    }
+
+
+
+
+
+
     // Previsualizar distancias de movimiento y ataques.
 
     private void OnDrawGizmos()
     {
         Gizmos.DrawWireSphere(transform.position, distanciaVision);
-        Gizmos.DrawWireSphere(transform.position, distanciaAtaque);
+        Gizmos.DrawWireSphere(transform.position, distanciaArrastre);
+        Gizmos.DrawWireSphere(transform.position, distanciaDisparo);
+        Gizmos.DrawWireSphere(transform.position, distanciaMelee);
     }
 
     void OnDrawGizmosSelected()
