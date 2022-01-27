@@ -101,8 +101,6 @@ public class ZombieScript: MonoBehaviour
             }
             attackAnimationTime = Time.time + nextAttackAnimation;
         }
-
-
         nextAttackTime = Time.time + nextAttack;
         Debug.Log("cerrado");
     }
