@@ -35,9 +35,9 @@ public class Enemy : MonoBehaviour
         JackScript.dazedTime = JackScript.startDazedTime * StunEnemiesAlive;
         SantaScript.dazedTime = SantaScript.startDazedTime * StunEnemiesAlive;
         CatnDogScript.dazedTime = CatnDogScript.startDazedTime * StunEnemiesAlive;
+        RedHatScript.dazedTime = RedHatScript.startDazedTime * StunEnemiesAlive;
 
         currentHealth -= damage;
-
         Debug.Log("Daño");  
 
         if (currentHealth <= 0)
@@ -45,6 +45,7 @@ public class Enemy : MonoBehaviour
             Die();
             StunEnemiesAlive += 1;
         }
+        animator.SetTrigger("takeDamage");
     }
 
     void Die()

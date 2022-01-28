@@ -30,19 +30,22 @@ public class Chest : MonoBehaviour
         distanciaJugador = Vector2.Distance(player.position, rb2D.position);
         if (distanciaJugador <= distanciaInteractuar && cofreAbierto == false)
         {
-            // Mostrar texto en la UI para abrir.
-            TextoUI.SetActive(true);
             if (Input.GetKeyDown(KeyCode.E))
             {
+                TextoUI.SetActive(false);
                 cofreAbierto = true;
                 animator.SetTrigger("openChest");
                 int random = Random.Range(1, 101);
 
-                if (random <= 50)
+                if (random <= 40)
                 {
                     // Cofre vacio
                     Debug.Log("Cofre vacio");
-                } else if (random > 50 && random <= 75)
+                }
+                else if (random > 40 && random <= 50)
+                {
+                    Instantiate(items[4],posicionCofre, false);
+                }else if (random > 50 && random <= 75)
                 {
                     // Items comunes
                     Instantiate(items[0], posicionCofre, false);
@@ -57,12 +60,23 @@ public class Chest : MonoBehaviour
                     Instantiate(items[3], posicionCofre, false);
                 }
             }
-        } else
+        } 
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Player") && !cofreAbierto)
+        {
+            TextoUI.SetActive(true);
+        }
+    }
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Player"))
         {
             TextoUI.SetActive(false);
         }
     }
-
     private void OnDrawGizmos()
     {
         Gizmos.DrawWireSphere(transform.position, distanciaInteractuar);;

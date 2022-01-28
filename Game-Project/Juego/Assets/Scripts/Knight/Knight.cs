@@ -32,6 +32,7 @@ public class Knight : MonoBehaviour
     public void TakeDamage(int damage)
     {
         Debug.Log("hurt");
+        animator.SetTrigger("takeDamage");
         currentHealth -= damage;
         healthBar.SetHealth(currentHealth);
 

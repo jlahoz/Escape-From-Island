@@ -16,6 +16,7 @@ public class Dialog : MonoBehaviour
     public GameObject continueButtonBoy;
     public GameObject continueButtonGirl;
     public GameObject inventoryUI;
+    public GameObject dialogsBG;
 
 
     private void Update()
@@ -35,6 +36,7 @@ public class Dialog : MonoBehaviour
     public void girlDialog()
     {
         inventoryUI.SetActive(false);
+        dialogsBG.SetActive(true);
         StartCoroutine(writeGirl());
     }
 
@@ -63,6 +65,7 @@ public class Dialog : MonoBehaviour
             text.text = "";
             continueButtonGirl.SetActive(false);
             inventoryUI.SetActive(true);
+            dialogsBG.SetActive(false);
         }
     }
 
@@ -70,6 +73,7 @@ public class Dialog : MonoBehaviour
     public void boyDialog()
     {
         inventoryUI.SetActive(false);
+        dialogsBG.SetActive(true);
         StartCoroutine(writeBoy());
     }
 
@@ -97,6 +101,7 @@ public class Dialog : MonoBehaviour
             text.text = "";
             continueButtonBoy.SetActive(false);
             inventoryUI.SetActive(true);
+            dialogsBG.SetActive(false);
         }
     }   
 

@@ -10,18 +10,25 @@ public class GirlScript : MonoBehaviour
     public Rigidbody2D rb2d;
     public Transform player;
     public Dialog girlDialog;
+    public GameObject eKeyIcon;
+    private bool pulsado = false;
 
     private void Update()
     {
         distanciaJugador = Vector2.Distance(player.position, rb2d.position);
 
-        if (distanciaJugador <= distanciaInteractuar)
+        if (distanciaJugador <= distanciaInteractuar && !pulsado)
         {
+            pulsado = true;
+            eKeyIcon.SetActive(true);
             if (Input.GetKeyDown(KeyCode.E))
             {
                 girlDialog.indexGirl = 0;
                 girlDialog.girlDialog();
             }
+        } else
+        {
+            eKeyIcon.SetActive(false);
         }
     }
 
