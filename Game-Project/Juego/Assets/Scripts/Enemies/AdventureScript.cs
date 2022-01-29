@@ -23,6 +23,7 @@ public class AdventureScript: MonoBehaviour
     float nextAttackTime = 0f;
 
 
+
     //Objetos 
     public GameObject Knight;
     public CapsuleCollider2D cc2D;

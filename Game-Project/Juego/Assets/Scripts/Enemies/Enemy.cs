@@ -12,7 +12,6 @@ public class Enemy : MonoBehaviour
 
     public GameObject rope;
     private Transform Knight;
-    private Vector3 posicionItem;
 
 
     void Start()
@@ -37,6 +36,8 @@ public class Enemy : MonoBehaviour
         CatnDogScript.dazedTime = CatnDogScript.startDazedTime * StunEnemiesAlive;
         RedHatScript.dazedTime = RedHatScript.startDazedTime * StunEnemiesAlive;
 
+        
+
         currentHealth -= damage;
         Debug.Log("Daño");  
 
@@ -56,7 +57,7 @@ public class Enemy : MonoBehaviour
 
         if(gameObject.name == "Boss_Adventure")
         {
-
+            Instantiate(rope, Knight.position, Knight.rotation);
         }
 
         Destroy(gameObject, 1);
