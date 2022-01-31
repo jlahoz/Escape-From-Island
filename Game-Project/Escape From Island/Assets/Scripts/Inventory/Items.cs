@@ -5,9 +5,9 @@ using UnityEngine;
 public class Items : MonoBehaviour
 {
     // Tiempos de las pociones
-    public int speedPotionTime = 10;
-    public int jumpPotionTime = 20;
-    public int damagePotionTime = 30;
+    public int speedPotionTime = 20;
+    public int jumpPotionTime = 30;
+    public int damagePotionTime = 60;
 
     // Items de la barca usados.
     public static bool usedWood = false;
