@@ -1,0 +1,193 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="CameraScript">
+    <Position X="10.5" Y="5.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\CameraScript.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Dialog">
+    <Position X="5.25" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAwAgAAAAAAiAAAAAAAAIAEAAAAACBAYQECCAQAAAAg=</HashCode>
+      <FileName>Assets\Scripts\Dialog.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AdventureScript">
+    <Position X="14.75" Y="11.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BAQEAAEEAIMEEAAABADAEQFhCAAAAAERIFQAADAREAA=</HashCode>
+      <FileName>Assets\Scripts\Enemies\AdventureScript.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BulletScript">
+    <Position X="18.25" Y="8" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAiAAAEAAACAAAAAAAEAAAYAAAQAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Enemies\BulletScript.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CatnDogScript">
+    <Position X="16.5" Y="14.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BAQEAAEAAIMAAAAgBABAEQAhAIAAAAEBAEQAgAEQEAA=</HashCode>
+      <FileName>Assets\Scripts\Enemies\CatnDogScript.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Enemy">
+    <Position X="14.75" Y="8" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BAAAAAAIACEAAAAgEAAAABEAAAAEAAAABAAAgAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Enemies\Enemy.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="JackScript">
+    <Position X="11.25" Y="8" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BAQEAAEAAIMAAAAgBABAEQAhAIAAAAEBAEQAgAAQEAA=</HashCode>
+      <FileName>Assets\Scripts\Enemies\JackScript.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NinjaScript">
+    <Position X="16.5" Y="8" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BAQEAAEAAIMEAAAgBABAEQEhAIAAAAEBABQAgAABEAA=</HashCode>
+      <FileName>Assets\Scripts\Enemies\NinjaScript.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RedHatScript">
+    <Position X="13" Y="8" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BAQEAAEAAIMAAAAgBABAEQAhAIAAAAEBAEQAgAAQEAA=</HashCode>
+      <FileName>Assets\Scripts\Enemies\RedHatScript.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SantaScript">
+    <Position X="11.25" Y="14" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BAQEAAEAAIMAAAAgBABAEQAhAIAAAAEBAEQAgAEQEAA=</HashCode>
+      <FileName>Assets\Scripts\Enemies\SantaScript.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ZombieScript">
+    <Position X="13" Y="14" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BAQEAAEAAIMEAAAgBABAEQEhAIAAAAEBABQAgAABEAA=</HashCode>
+      <FileName>Assets\Scripts\Enemies\ZombieScript.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Inventory">
+    <Position X="2.25" Y="12" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAACAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Inventory\Inventory.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Items">
+    <Position X="5.75" Y="12" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAEAAQAABCAAAgAAEAAAAAEAAAIBBAQiRAESoAAEAAA=</HashCode>
+      <FileName>Assets\Scripts\Inventory\Items.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Pickup">
+    <Position X="2.25" Y="13.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAABgAAAAAAAAAEAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Inventory\Pickup.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Slot">
+    <Position X="4" Y="12" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACICAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Inventory\Slot.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Spawn">
+    <Position X="4" Y="14" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAgAQQAAAAAAAAAAAABAAAAAAAAAAE=</HashCode>
+      <FileName>Assets\Scripts\Inventory\Spawn.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="HealthBar">
+    <Position X="10.5" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAIAQAAAAAAAAAAAAAAAAAgEAgAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Knight\HealthBar.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Knight">
+    <Position X="2.25" Y="8" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BAQAAAAIASAAAAAAAAAAAAAAAAAEAAAgAAAggAAQAAA=</HashCode>
+      <FileName>Assets\Scripts\Knight\Knight.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="KnightCombat">
+    <Position X="5.75" Y="8" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BAQAAAAAAAIEAAAABAAAEQAAAIAAAAIAAAAAAAAAQAA=</HashCode>
+      <FileName>Assets\Scripts\Knight\KnightCombat.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="KnightMovement">
+    <Position X="4" Y="8" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAiBAACAAAAAAAAABAAAAAAABAABAAAQAEAA=</HashCode>
+      <FileName>Assets\Scripts\Knight\KnightMovement.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MainMenu">
+    <Position X="7" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAACAECAAAAAAAAAAAQA=</HashCode>
+      <FileName>Assets\Scripts\MainMenu.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MiniMapScript">
+    <Position X="7" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAIAAAAABAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\MiniMapScript.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BoyScript">
+    <Position X="15.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAwEAABAAAAAAEAAAAAAQAABACAAAAABAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\NPCs\BoyScript.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GirlScript">
+    <Position X="13.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQEAABAAAAAAEAAAAAAQAABACAAAAARAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\NPCs\GirlScript.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BoatScript">
+    <Position X="7.5" Y="12" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQFhABAACAAAEAAAAAAAAABCAAACAAEwiEAAAIAACA=</HashCode>
+      <FileName>Assets\Scripts\Objects\BoatScript.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Chest">
+    <Position X="0.5" Y="12" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BAQEAADAAAAAAIAAAAhAAAABAEAEAAABBAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Objects\Chest.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PauseMenu">
+    <Position X="8.75" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABQgABAAAQAAAAAAAAAAAAAQAAAAAAAAAAAAAAgAIQA=</HashCode>
+      <FileName>Assets\Scripts\PauseMenu.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
